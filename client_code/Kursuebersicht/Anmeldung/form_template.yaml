@@ -1,0 +1,14 @@
+components:
+- components:
+  - name: repeating_panel_1
+    properties: {item_template: Kursuebersicht.Anmeldung.RowTemplate2}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'USRPIJ,HQFPBZ'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: Vorname, id: JKSDUP, title: Mitglied}
+    - {data_key: column_2, id: VJQQOR, title: Anmelden}
+  type: DataGrid
+container: {type: ColumnPanel}
+is_package: true

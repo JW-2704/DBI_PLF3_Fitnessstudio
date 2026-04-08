@@ -1,4 +1,19 @@
 allow_embedding: false
+db_schema:
+  files:
+    client: none
+    columns:
+    - {admin_ui: null, client_hidden: null, name: null, type: null}
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: path
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: file
+      type: media
+    server: full
+    title: Files
 name: Material Design 2
 package_name: Material_Design_2
 runtime_options:
@@ -6,5 +21,12 @@ runtime_options:
   legacy_features: {bootstrap3: true, class_names: true}
   server_spec: {base: python310-minimal}
   version: 3
-services: []
-startup_form: Form1
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config: {}
+  server_config: {file_table: files}
+  source: /runtime/services/anvil/files.yml
+startup: {module: Kursuebersicht, type: form}
+startup_form: null
